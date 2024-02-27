@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Researcher View</title>
+    <link rel="stylesheet"  href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <button class="button upload-consent"><span>📄</span> Upload Consent Form</button>
+        <div class="patient-pool">
+            <h2>Patient Pool Diagnostics</h2>
+            <button class="button"><span>👥</span> Identify Target Population</button>
+            <form action="/upload_file" method="get">
+                <button type="submit" class="button"><span>👥</span> Identify Target Population</button>
+            </form>
+            <button class="button view-diversity"><span>📊</span> View Patient Diversity</button>
+        </div>
+        <div class="diversity-chart" style="display: none;">
+            <h3>Underrepresented Groups in Study</h3>
+            <img  src="{{ url_for('static', filename='css/Chart.png') }}" alt="Diversity Chart">
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
